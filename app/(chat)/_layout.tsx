@@ -47,7 +47,8 @@ export default function RootLayout() {
   return (
     <Stack screenOptions={{
       contentStyle: {
-        backgroundColor: '#000', // أو أي لون دارك عندك
+        backgroundColor: '#000',
+        paddingHorizontal: 12, paddingTop: 32
       },
     }}>
       <Stack.Screen
@@ -59,11 +60,16 @@ export default function RootLayout() {
         headerLeft: () => <Entypo name="chevron-small-left" size={32} color="white" onPress={() => router.back()} />
       }} />
       <Stack.Screen name="new-room" options={{
-        headerTitle: 'New Room',
+        headerTitle: 'New Chat Room',
         headerLeft: () => <>
 
           <Entypo name="chevron-small-left" size={32} color="white" onPress={() => router.back()} />
         </>
+      }} />
+
+      <Stack.Screen name="[chat]" options={{
+
+        headerLeft: () => <Entypo name="chevron-small-left" size={32} color="white" onPress={() => router.back()} />
       }} />
     </Stack>
   );
